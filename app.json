@@ -12,15 +12,18 @@
 		},
 		"GITHUB_OPTIONS": {
 			"description": "JSON-encoded options object for the `node-github` client",
-			"value": "{}"
+			"value": "{}",
+			"required": false
 		},
 		"PRETTIER_OPTIONS": {
 			"description": "JSON-encoded options object for `prettier`",
-			"value": "{}"
+			"value": "{}",
+			"required": false
 		},
 		"LANGS": {
 			"description": "JSON-encoded array of languages that should be formatted",
-			"value": "[\"js\", \"javascript\", \"jsx\", \"es6\", \"css\", \"less\", \"scss\", \"ts\"]"
+			"value": "[\"js\", \"javascript\", \"jsx\", \"es6\", \"css\", \"less\", \"scss\", \"ts\"]",
+			"required": false
 		}
 	}
 }
