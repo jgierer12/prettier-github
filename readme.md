@@ -1,4 +1,4 @@
-# Prettier GitHub
+# Prettier GitHub [![Build Status](https://travis-ci.org/jgierer12/prettier-github.svg?branch=master)](https://travis-ci.org/jgierer12/prettier-github)
 
 > Format code in GitHub comments with [`prettier`](https://github.com/prettier/prettier)
 
