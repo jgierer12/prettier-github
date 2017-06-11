@@ -10,6 +10,7 @@
 	2. Set `GITHUB_TOKEN` to the personal access token generated earlier
 	3. Set `GITHUB_WEBHOOK_SECRET` to anything you want
 	4. Set `GITHUB_OPTIONS` and `PRETTIER_OPTIONS` to JSON-encoded option objects for [`node-github`](https://github.com/mikedeboer/node-github#example) and [`prettier`](https://github.com/prettier/prettier#options) *(optional)*
+	5. Set `LANGS` to a JSON-encoded array of languages that should be formatted *(optional)*
 3. Set up a [webhook](https://developer.github.com/webhooks/creating/#setting-up-a-webhook) for your repo with the following options:
 	* Payload URL: The URL of your bot (e.g. `prettier-github.now.sh`)
 	* Content type: `application/json`
