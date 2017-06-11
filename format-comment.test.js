@@ -36,8 +36,23 @@ test('Ignores comments containing `<!-- prettier-github disable -->`', () => {
 	expect(formatComment(comment)).toBe(comment);
 });
 
-test('Ignores invalid code blocks', () => {
-	const comment = '```js\ninvalid javascript\n```\n';
+describe('invalid code blocks', () => {
+	beforeEach(() => {
+		global.console = {
+			warn: jest.fn()
+		};
+	});
 
-	expect(formatComment(comment)).toBe(comment);
+	test('Warns about invalid code blocks', () => {
+		const comment = '```js\ninvalid javascript\n```\n';
+		formatComment(comment);
+
+		expect(global.console.warn).toHaveBeenCalled();
+	});
+
+	test('Ignores invalid code blocks', () => {
+		const comment = '```js\ninvalid javascript\n```\n';
+
+		expect(formatComment(comment)).toBe(comment);
+	});
 });
