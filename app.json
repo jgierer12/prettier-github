@@ -20,7 +20,7 @@
 		},
 		"LANGS": {
 			"description": "JSON-encoded array of languages that should be formatted",
-			"value": "[\"js\", \"javascript\", \"es6\", \"css\", \"less\", \"scss\", \"ts\"]"
+			"value": "[\"js\", \"javascript\", \"jsx\", \"es6\", \"css\", \"less\", \"scss\", \"ts\"]"
 		}
 	}
 }
