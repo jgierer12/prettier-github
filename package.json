@@ -4,6 +4,9 @@
   "description": "Format code in GitHub comments with `prettier`",
   "license": "MIT",
   "repository": "jgierer12/prettier-github",
+  "engines": {
+    "node": ">=7"
+  },
   "author": {
     "name": "Jonas Gierer",
     "email": "jgierer12@outlook.com",
