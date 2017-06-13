@@ -15,7 +15,7 @@ const captureRaw = (req, res, buffer) => {
 
 app.use(bodyParser.json({verify: captureRaw}));
 
-app.post('/', (req, res) => {
+app.post('/', async (req, res) => {
 	const event = req.headers['x-github-event'];
 
 	if (!event) {
@@ -29,7 +29,7 @@ app.post('/', (req, res) => {
 	}
 
 	if (event === 'issue_comment') {
-		handleComment(req.body);
+		await handleComment(req.body);
 	}
 
 	res.end();
