@@ -24,7 +24,8 @@ module.exports = commentRaw => {
 				const formattedCode = format(block.code);
 				if (formattedCode !== block.code) {
 					const newText = noticeComment(block.code) + '\n' + block.block.replace(block.code, formattedCode);
-					const oldTextRegex = new RegExp(`(${noticeComment('[\\s\\S]*')}\n)?${extract.id(i)}`);
+					const noticeCommentRegex = noticeComment('__OLD_BLOCK__').replace(/([.*+?^=!:${}()|[\]/\\])/g, '\\$1');
+					const oldTextRegex = new RegExp(`(${noticeCommentRegex.replace('__OLD_BLOCK__', '[\\s\\S]*')}\n)?${extract.id(i)}`.replace(/\n/g, '(\n|(\r\n))'));
 					comment.text = comment.text.replace(oldTextRegex, newText);
 					return;
 				}
