@@ -1,27 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Formats a code block 1`] = `
-"\`\`\`js
+"<!-- The following code block was formatted with \`prettier\`. If this is not desired, please change this comment to \`prettier-github disable\`. A copy of your original code block is included below in case you want to restore it.
+Learn more about \`prettier-github\` at https://github.com/jgierer12/prettier-github
+
+foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());
+
+-->
+\`\`\`js
 foo(
   reallyLongArg(),
   omgSoManyParameters(),
   IShouldRefactorThis(),
   isThereSeriouslyAnotherOne()
 );
-\`\`\`
-"
+\`\`\`"
 `;
 
 exports[`Formats multiple code blocks 1`] = `
-"\`\`\`js
-foo(
-  reallyLongArg(),
-  omgSoManyParameters(),
-  IShouldRefactorThis(),
-  isThereSeriouslyAnotherOne()
-);
-\`\`\`
+"<!-- The following code block was formatted with \`prettier\`. If this is not desired, please change this comment to \`prettier-github disable\`. A copy of your original code block is included below in case you want to restore it.
+Learn more about \`prettier-github\` at https://github.com/jgierer12/prettier-github
 
+foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());
+
+-->
 \`\`\`js
 foo(
   reallyLongArg(),
@@ -30,5 +32,30 @@ foo(
   isThereSeriouslyAnotherOne()
 );
 \`\`\`
-"
+<!-- The following code block was formatted with \`prettier\`. If this is not desired, please change this comment to \`prettier-github disable\`. A copy of your original code block is included below in case you want to restore it.
+Learn more about \`prettier-github\` at https://github.com/jgierer12/prettier-github
+
+foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());
+
+-->
+\`\`\`js
+foo(
+  reallyLongArg(),
+  omgSoManyParameters(),
+  IShouldRefactorThis(),
+  isThereSeriouslyAnotherOne()
+);
+\`\`\`"
+`;
+
+exports[`Overrides notice if the comment has been formatted previously 1`] = `
+"<!-- The following code block was formatted with \`prettier\`. If this is not desired, please change this comment to \`prettier-github disable\`. A copy of your original code block is included below in case you want to restore it.
+Learn more about \`prettier-github\` at https://github.com/jgierer12/prettier-github
+
+bar()
+
+-->
+\`\`\`js
+bar();
+\`\`\`"
 `;
