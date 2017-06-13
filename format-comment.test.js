@@ -12,6 +12,12 @@ test('Formats multiple code blocks', () => {
 	expect(formatComment(comment)).toMatchSnapshot();
 });
 
+test('Overrides notice if the comment has been formatted previously', () => {
+	const comment = '<!-- The following code block was formatted with `prettier`. If this is not desired, please change this comment to `prettier-github disable`. A copy of your original code block is included below in case you want to restore it.\nLearn more about `prettier-github` at https://github.com/jgierer12/prettier-github\n\nfoo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());\n\n-->\n```js\nbar()\n```';
+
+	expect(formatComment(comment)).toMatchSnapshot();
+});
+
 test('Ignores no code blocks', () => {
 	const comment = 'Nothing to format here\n';
 

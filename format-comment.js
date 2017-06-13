@@ -1,6 +1,14 @@
 const extract = require('extract-gfm');
 const prettier = require('prettier');
 
+const noticeComment = originalCode =>
+`<!-- The following code block was formatted with \`prettier\`. If this is not desired, please change this comment to \`prettier-github disable\`. A copy of your original code block is included below in case you want to restore it.
+Learn more about \`prettier-github\` at https://github.com/jgierer12/prettier-github
+
+${originalCode}
+
+-->`;
+
 module.exports = commentRaw => {
 	const comment = extract.parseBlocks(commentRaw);
 
@@ -15,15 +23,9 @@ module.exports = commentRaw => {
 			try {
 				const formattedCode = format(block.code);
 				if (formattedCode !== block.code) {
-					const newText =
-`<!-- The following code block was formatted with \`prettier\`. If this is not desired, please change this comment to \`prettier-github disable\`. A copy of your original code block is included below in case you want to restore it.
-Learn more about \`prettier-github\` at https://github.com/jgierer12/prettier-github
-
-${block.code}
-
--->
-${block.block.replace(block.code, formattedCode)}`;
-					comment.text = comment.text.replace(extract.id(i), newText);
+					const newText = noticeComment(block.code) + '\n' + block.block.replace(block.code, formattedCode);
+					const oldTextRegex = new RegExp(`(${noticeComment('[\\s\\S]*')}\n)?${extract.id(i)}`);
+					comment.text = comment.text.replace(oldTextRegex, newText);
 					return;
 				}
 			} catch (error) {
