@@ -27,6 +27,10 @@ After: ![After](https://user-images.githubusercontent.com/4331946/27002183-b8f78
 
 You can disable formatting per-comment by writing `<!-- prettier-github disable -->` anywhere in the comment (except code blocks)
 
+### Limitations
+
+Due to lacking GitHub APIs, `prettier-github` currently doesn't format reviews, review comments and commit comments. See [#11](https://github.com/jgierer12/prettier-github/issues/11)
+
 ## License
 
 MIT
