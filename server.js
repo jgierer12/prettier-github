@@ -3,7 +3,14 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 
 const githubSecret = require('./github-secret.js');
-const handleComment = require('./handle-comment.js');
+
+/* eslint-disable quote-props */
+const handlers = {
+	'issue_comment': require('./handle-comment.js'),
+	'issues': require('./handle-issue.js'),
+	'pull_request': require('./handle-pr.js')
+};
+/* eslint-enable quote-props */
 
 dotenv.config();
 
@@ -28,8 +35,8 @@ app.post('/', async (req, res) => {
 		return res.end();
 	}
 
-	if (event === 'issue_comment') {
-		await handleComment(req.body);
+	if (handlers[event]) {
+		await handlers[event](req.body);
 	}
 
 	res.end();
