@@ -15,7 +15,7 @@
 	* Payload URL: The URL of your bot (e.g. `https://prettier-github.now.sh`)
 	* Content type: `application/json`
 	* Secret: The value of `GITHUB_WEBHOOK_SECRET` you set earlier
-	* Events: "Let me select individual events"; select only **Issue comment**
+	* Events: "Let me select individual events"; select **Issue comment**, **Issues** and **Pull request**
 
 ## Usage
 
