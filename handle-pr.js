@@ -25,7 +25,7 @@ module.exports = async data => {
 			token: process.env.GITHUB_TOKEN
 		});
 
-		github.pulls.edit(
+		github.issues.edit(
 			Object.assign({
 				number: data.pull_request.number,
 				body: newPR
