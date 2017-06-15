@@ -2,13 +2,13 @@ const GitHubApi = require('github');
 const formatComment = require('./format-comment.js');
 
 module.exports = async data => {
+	console.log(`Event: ${data.comment.html_url} (${data.action})`);
+
 	const github = new GitHubApi(JSON.parse(process.env.GITHUB_OPTIONS || '{}'));
 	const repo = {
 		owner: data.repository.owner.login,
 		repo: data.repository.name
 	};
-
-	console.log(`Event: ${data.comment.html_url} (${data.action})`);
 
 	switch (data.action) {
 		case 'created':
