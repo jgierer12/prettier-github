@@ -3,6 +3,8 @@ const formatComment = require('./format-comment.js');
 const auth = require('./auth.js');
 
 module.exports = async data => {
+	console.log(`Event: ${data.issue.html_url} (${data.action})`);
+
 	const github = new GitHubApi(JSON.parse(process.env.GITHUB_OPTIONS || '{}'));
 	const repo = {
 		owner: data.repository.owner.login,
@@ -21,6 +23,8 @@ module.exports = async data => {
 	const newIssue = formatComment(data.issue.body);
 
 	if (newIssue !== data.issue.body) {
+		console.log(`Event: ${data.issue.html_url} (prettified!)`);
+
 		await auth(github, data.installation);
 
 		github.issues.edit(
