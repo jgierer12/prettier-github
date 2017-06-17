@@ -4,18 +4,7 @@
 
 ## Installation
 
-1. Set up a [personal access token](https://github.com/settings/tokens/new) with the **repo** scope
-2. Deploy the bot
-	1. [![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/jgierer12/prettier-github&env=GITHUB_TOKEN&env=GITHUB_WEBHOOK_SECRET&env=GITHUB_OPTIONS&env=PRETTIER_OPTIONS&env=LANGS) or [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jgierer12/prettier-github)
-	2. Set `GITHUB_TOKEN` to the personal access token generated earlier
-	3. Set `GITHUB_WEBHOOK_SECRET` to anything you want
-	4. Set `GITHUB_OPTIONS` and `PRETTIER_OPTIONS` to JSON-encoded option objects for [`node-github`](https://github.com/mikedeboer/node-github#example) and [`prettier`](https://github.com/prettier/prettier#options) *(optional)*
-	5. Set `LANGS` to a JSON-encoded array of languages that should be formatted *(optional)*
-3. Set up a [webhook](https://developer.github.com/webhooks/creating/#setting-up-a-webhook) for your repo with the following options:
-	* Payload URL: The URL of your bot (e.g. `https://prettier-github.now.sh`)
-	* Content type: `application/json`
-	* Secret: The value of `GITHUB_WEBHOOK_SECRET` you set earlier
-	* Events: "Let me select individual events"; select **Issue comment**, **Issues** and **Pull request**
+Install the [Prettier GitHub app](https://github.com/apps/prettier-github) to some or all of your repos
 
 ## Usage
 
