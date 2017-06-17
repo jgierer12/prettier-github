@@ -1,5 +1,6 @@
 const GitHubApi = require('github');
 const formatComment = require('./format-comment.js');
+const auth = require('./auth.js');
 
 module.exports = async data => {
 	const github = new GitHubApi(JSON.parse(process.env.GITHUB_OPTIONS || '{}'));
@@ -33,10 +34,7 @@ module.exports = async data => {
 	const newComment = formatComment(data.comment.body);
 
 	if (newComment !== data.comment.body) {
-		github.authenticate({
-			type: 'oauth',
-			token: process.env.GITHUB_TOKEN
-		});
+		await auth(github, data.installation);
 
 		github.issues.editComment(
 			Object.assign({
