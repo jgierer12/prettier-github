@@ -1,29 +1,17 @@
 {
 	"name": "Prettier GitHub",
-	"description": "Format code in GitHub comments with `prettier`",
+	"description": "Format code in GitHub comments with Prettier",
 	"repository": "https://github.com/jgierer12/prettier-github",
 	"env": {
-		"GITHUB_TOKEN": {
-			"description": "Your GitHub personal access token"
+		"GITHUB_KEY": {
+			"description": "Your GitHub private key"
+		},
+		"GITHUB_ID": {
+			"description": "The ID of your GitHub app"
 		},
 		"GITHUB_WEBHOOK_SECRET": {
 			"description": "Your GitHub webhook secret",
 			"generator": "secret"
-		},
-		"GITHUB_OPTIONS": {
-			"description": "JSON-encoded options object for the `node-github` client",
-			"value": "{}",
-			"required": false
-		},
-		"PRETTIER_OPTIONS": {
-			"description": "JSON-encoded options object for `prettier`",
-			"value": "{}",
-			"required": false
-		},
-		"LANGS": {
-			"description": "JSON-encoded array of languages that should be formatted",
-			"value": "[\"js\", \"javascript\", \"jsx\", \"es6\", \"css\", \"less\", \"scss\", \"ts\"]",
-			"required": false
 		}
 	}
 }
