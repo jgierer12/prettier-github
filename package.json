@@ -27,6 +27,11 @@
       "node": true
     }
   },
+  "prettier": {
+    "singleQuotes": true,
+    "useTabs": true,
+    "bracketSpacing": false
+  },
   "dependencies": {
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",

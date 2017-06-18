@@ -40,6 +40,30 @@ You can disable formatting per-comment by writing `<!-- prettier-github disable 
 
 Due to lacking GitHub APIs, Prettier GitHub currently doesn't format reviews, review comments and commit comments. See [#11](https://github.com/jgierer12/prettier-github/issues/11)
 
+## Configuration
+
+Prettier GitHub will use the `prettier` field in the `package.json` of the respective repository for configuration. See [Prettier's readme](https://github.com/prettier/prettier#options) for available options. Additionally, you can set `langs` to an array specifying which languages should be formatted.
+
+### Example
+
+`package.json`:
+```json
+{
+	...
+	"prettier": {
+		"singleQuote": true,
+		"useTabs": true,
+		"langs": [
+			"js",
+			"javascript"
+		]
+	}
+	...
+}
+```
+
+This will enforce single quotes and tabs, and will only format code blocks marked as `js` or `javascript`.
+
 ## Development
 
 1. Generate [personal access token](https://github.com/settings/tokens/new) with the **repo** scope for your GitHub account

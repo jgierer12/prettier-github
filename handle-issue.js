@@ -1,6 +1,7 @@
 const GitHubApi = require('github');
 const formatComment = require('./format-comment.js');
 const auth = require('./auth.js');
+const getConfig = require('./get-config.js');
 
 module.exports = async data => {
 	console.log(`Event: ${data.issue.html_url} (${data.action})`);
@@ -20,12 +21,12 @@ module.exports = async data => {
 			return;
 	}
 
-	const newIssue = formatComment(data.issue.body);
+	await auth(github, data.installation);
+
+	const newIssue = formatComment(data.issue.body, await getConfig(github, repo));
 
 	if (newIssue !== data.issue.body) {
 		console.log(`Event: ${data.issue.html_url} (prettified!)`);
-
-		await auth(github, data.installation);
 
 		github.issues.edit(
 			Object.assign({
