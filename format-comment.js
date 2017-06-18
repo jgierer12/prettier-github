@@ -9,6 +9,8 @@ ${originalCode}
 
 -->`;
 
+const langs = ['js', 'javascript', 'jsx', 'es6', 'css', 'less', 'scss', 'ts'];
+
 module.exports = commentRaw => {
 	const comment = extract.parseBlocks(commentRaw);
 
@@ -19,7 +21,7 @@ module.exports = commentRaw => {
 	const format = source => prettier.format(source, JSON.parse(process.env.PRETTIER_OPTIONS || '{}')).replace(/\n$/, '');
 
 	comment.blocks.forEach((block, i) => {
-		if (JSON.parse(process.env.LANGS || '["js", "javascript", "jsx", "es6", "css", "less", "scss", "ts"]').includes(block.lang)) {
+		if (langs.includes(block.lang)) {
 			try {
 				const formattedCode = format(block.code);
 				if (formattedCode !== block.code) {

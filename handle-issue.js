@@ -5,7 +5,7 @@ const auth = require('./auth.js');
 module.exports = async data => {
 	console.log(`Event: ${data.issue.html_url} (${data.action})`);
 
-	const github = new GitHubApi(JSON.parse(process.env.GITHUB_OPTIONS || '{}'));
+	const github = new GitHubApi();
 	const repo = {
 		owner: data.repository.owner.login,
 		repo: data.repository.name
