@@ -43,6 +43,7 @@ Due to lacking GitHub APIs, Prettier GitHub currently doesn't format reviews, re
 ## Development
 
 1. Generate [personal access token](https://github.com/settings/tokens/new) with the **repo** scope for your GitHub account
+1. Install [ngrok](https://ngrok.com/) for localhost tunnelling
 1. Run `ngrok http 3000` and note down the URL, for example `http://2ab92a92.ngrok.io`
 1. Set up a [webhook](https://developer.github.com/webhooks/creating/#setting-up-a-webhook) for your testing repo
 	1. Set **Payload URL** to the ngrok URL
