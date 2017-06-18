@@ -9,16 +9,16 @@ ${originalCode}
 
 -->`;
 
-const langs = ['js', 'javascript', 'jsx', 'es6', 'css', 'less', 'scss', 'ts'];
-
-module.exports = commentRaw => {
+module.exports = (commentRaw, prettierConfig = {}) => {
 	const comment = extract.parseBlocks(commentRaw);
 
 	if (comment.text.includes('<!-- prettier-github disable -->') || comment.blocks.length === 0) {
 		return commentRaw;
 	}
 
-	const format = source => prettier.format(source, JSON.parse(process.env.PRETTIER_OPTIONS || '{}')).replace(/\n$/, '');
+	const format = source => prettier.format(source, prettierConfig).replace(/\n$/, '');
+
+	const langs = prettierConfig.langs || ['js', 'javascript', 'jsx', 'es6', 'css', 'less', 'scss', 'ts'];
 
 	comment.blocks.forEach((block, i) => {
 		if (langs.includes(block.lang)) {
