@@ -1,6 +1,6 @@
 # Prettier GitHub [![Build Status](https://travis-ci.org/jgierer12/prettier-github.svg?branch=master)](https://travis-ci.org/jgierer12/prettier-github)
 
-> Format code in GitHub comments with [`prettier`](https://github.com/prettier/prettier)
+> Format code in GitHub comments with [Prettier](https://github.com/prettier/prettier)
 
 ## Installation
 
@@ -28,7 +28,7 @@ This is the recommended and easiest installation method. Install the [Prettier G
 
 ## Usage
 
-Whenever someone includes a JavaScript code block in a comment, it will be formatted using `prettier`.
+Whenever someone includes a JavaScript code block in a comment, it will be formatted using Prettier.
 
 Before: ![Before](https://user-images.githubusercontent.com/4331946/27002184-bf126a80-4dda-11e7-9806-87d697cbe774.png)
 
@@ -38,7 +38,7 @@ You can disable formatting per-comment by writing `<!-- prettier-github disable 
 
 ### Limitations
 
-Due to lacking GitHub APIs, `prettier-github` currently doesn't format reviews, review comments and commit comments. See [#11](https://github.com/jgierer12/prettier-github/issues/11)
+Due to lacking GitHub APIs, Prettier GitHub currently doesn't format reviews, review comments and commit comments. See [#11](https://github.com/jgierer12/prettier-github/issues/11)
 
 ## Development
 

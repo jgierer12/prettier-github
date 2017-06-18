@@ -1,6 +1,6 @@
 {
 	"name": "Prettier GitHub",
-	"description": "Format code in GitHub comments with `prettier`",
+	"description": "Format code in GitHub comments with Prettier",
 	"repository": "https://github.com/jgierer12/prettier-github",
 	"env": {
 		"GITHUB_KEY": {
