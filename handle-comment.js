@@ -34,6 +34,10 @@ module.exports = async data => {
 			return;
 	}
 
+	if (!data.comment.body) {
+		return;
+	}
+
 	await auth(github, data.installation);
 
 	const newComment = formatComment(data.comment.body, await getConfig(github, repo));
