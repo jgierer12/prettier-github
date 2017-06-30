@@ -21,6 +21,10 @@ module.exports = async data => {
 			return;
 	}
 
+	if (!data.issue.body) {
+		return;
+	}
+
 	await auth(github, data.installation);
 
 	const newIssue = formatComment(data.issue.body, await getConfig(github, repo));

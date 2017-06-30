@@ -21,6 +21,10 @@ module.exports = async data => {
 			return;
 	}
 
+	if (!data.pull_request.body) {
+		return;
+	}
+
 	await auth(github, data.installation);
 
 	const newPR = formatComment(data.pull_request.body, await getConfig(github, repo));
