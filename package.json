@@ -1,50 +1,50 @@
 {
-  "name": "prettier-github",
-  "version": "1.2.0",
-  "description": "Format code in GitHub comments with Prettier",
-  "license": "MIT",
-  "repository": "jgierer12/prettier-github",
-  "engines": {
-    "node": ">=7"
-  },
-  "author": {
-    "name": "Jonas Gierer",
-    "email": "jgierer12@outlook.com",
-    "url": "jgierer12.com"
-  },
-  "scripts": {
-    "test:lint": "eslint .",
-    "test:unit": "jest .",
-    "test": "run-p test:*",
-    "start": "node ./server.js"
-  },
-  "eslintConfig": {
-    "extends": [
-      "xo"
-    ],
-    "env": {
-      "jest": true,
-      "node": true
-    }
-  },
-  "prettier": {
-    "singleQuotes": true,
-    "useTabs": true,
-    "bracketSpacing": false
-  },
-  "dependencies": {
-    "body-parser": "^1.17.2",
-    "dotenv": "^4.0.0",
-    "express": "^4.15.3",
-    "extract-gfm": "^0.1.0",
-    "github": "^9.2.0",
-    "jsonwebtoken": "^7.4.1",
-    "prettier": "^1.4.2"
-  },
-  "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-xo": "^0.18.2",
-    "jest": "^20.0.4",
-    "npm-run-all": "^4.0.2"
-  }
+	"name": "prettier-github",
+	"version": "1.2.0",
+	"description": "Format code in GitHub comments with Prettier",
+	"license": "MIT",
+	"repository": "jgierer12/prettier-github",
+	"engines": {
+		"node": ">=7"
+	},
+	"author": {
+		"name": "Jonas Gierer",
+		"email": "jgierer12@outlook.com",
+		"url": "jgierer12.com"
+	},
+	"scripts": {
+		"test:lint": "eslint .",
+		"test:unit": "jest .",
+		"test": "run-p test:*",
+		"start": "node ./server.js"
+	},
+	"eslintConfig": {
+		"extends": [
+			"xo"
+		],
+		"env": {
+			"jest": true,
+			"node": true
+		}
+	},
+	"prettier": {
+		"singleQuotes": true,
+		"useTabs": true,
+		"bracketSpacing": false
+	},
+	"dependencies": {
+		"body-parser": "^1.17.2",
+		"dotenv": "^4.0.0",
+		"express": "^4.15.3",
+		"extract-gfm": "^0.1.0",
+		"github": "^9.2.0",
+		"jsonwebtoken": "^7.4.1",
+		"prettier": "^1.4.2"
+	},
+	"devDependencies": {
+		"eslint": "^3.19.0",
+		"eslint-config-xo": "^0.18.2",
+		"jest": "^20.0.4",
+		"npm-run-all": "^4.0.2"
+	}
 }
