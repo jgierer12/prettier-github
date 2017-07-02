@@ -44,7 +44,7 @@
 	"devDependencies": {
 		"eslint": "^3.19.0",
 		"eslint-config-xo": "^0.18.2",
-		"jest": "^20.0.4",
+		"jest-cli": "^20.0.4",
 		"npm-run-all": "^4.0.2"
 	}
 }
