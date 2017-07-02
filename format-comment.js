@@ -16,14 +16,14 @@ module.exports = (commentRaw, prettierConfig = {}) => {
 		return commentRaw;
 	}
 
-	const format = source => prettier.format(source, prettierConfig).replace(/\n$/, '');
+	const format = (source, lang) => prettier.format(source, Object.assign({filepath: `.${lang}`}, prettierConfig)).replace(/\n$/, '');
 
-	const langs = prettierConfig.langs || ['js', 'javascript', 'jsx', 'es6', 'css', 'less', 'scss', 'ts'];
+	const langs = prettierConfig.langs || ['js', 'javascript', 'jsx', 'es6', 'css', 'less', 'scss', 'ts', 'graphql', 'json'];
 
 	comment.blocks.forEach((block, i) => {
 		if (langs.includes(block.lang)) {
 			try {
-				const formattedCode = format(block.code);
+				const formattedCode = format(block.code, block.lang);
 				if (formattedCode !== block.code) {
 					const newText = noticeComment(block.code) + '\n' + block.block.replace(block.code, formattedCode);
 					const noticeCommentRegex = noticeComment('__OLD_BLOCK__').replace(/([.*+?^=!:${}()|[\]/\\])/g, '\\$1');

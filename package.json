@@ -39,7 +39,7 @@
 		"extract-gfm": "^0.1.0",
 		"github": "^9.2.0",
 		"jsonwebtoken": "^7.4.1",
-		"prettier": "^1.4.2"
+		"prettier": "^1.5.2"
 	},
 	"devDependencies": {
 		"eslint": "^3.19.0",
